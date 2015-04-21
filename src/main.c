@@ -1,14 +1,27 @@
 #include <stdio.h>
 #include <gmp.h>
 #include <string.h>
+#define BUFFER_SIZE 1048576
+#define BUFFER_SIZE_IND 1048575
+void populateBuffer(unsigned char buffer[BUFFER_SIZE])
+{
+	unsigned long int count = 0;
+	buffer[0] = '\0';
+	buffer[1] = '1';
+	for(count = 2; count < BUFFER_SIZE_IND-1;count+=2)
+	{
+		buffer[count] = '\0';
+		buffer[count+1] = '1';
+	}
+}
 void fill(char fileName[],mpz_t size)
 {
 	FILE * filler;
 	
-	char buffer[1000];
-	unsigned long int offset = 1000;
+	unsigned char buffer[BUFFER_SIZE];
+	unsigned long int offset = BUFFER_SIZE;
 
-	memset(buffer,'\0',999);
+	populateBuffer(buffer);
 
 	mpz_t counter;
 	mpz_t difference;
@@ -28,7 +41,7 @@ void fill(char fileName[],mpz_t size)
 		do
 		{
 			mpz_sub(difference,size,counter);
-			if(mpz_cmp_ui(difference,1000) < 0)
+			if(mpz_cmp_ui(difference,BUFFER_SIZE) < 0)
 			{
 				offset = mpz_get_ui(difference);
 			}
