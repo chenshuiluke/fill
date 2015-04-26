@@ -3,6 +3,22 @@
 #include <string.h>
 #define BUFFER_SIZE 1048576
 #define BUFFER_SIZE_IND 1048575
+#ifdef __gnu_linux__
+	#include <unistd.h>
+#endif
+#ifdef _WIN32
+	#include <windows.h>
+#endif
+void mySleep(int sleepMs)
+{
+	#ifdef __gnu_linux__
+	    usleep(sleepMs * 1000);   // usleep takes sleep time in us (1 millionth of a second)
+	#endif
+
+	#ifdef _WIN32
+	    Sleep(sleepMs);
+	#endif
+}
 void populateBuffer(unsigned char buffer[BUFFER_SIZE])
 {
 	unsigned long int count = 0;
@@ -51,6 +67,7 @@ void fill(char fileName[],mpz_t size)
 				break;
 			}
 			mpz_add_ui(counter,counter,offset);	
+			mySleep(1);
 		}while(mpz_cmp(counter,size) < 0);
 	}
 }
