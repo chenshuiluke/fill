@@ -19,10 +19,15 @@ fill is a C program that generates files of a theoretically unlimited size using
 
 
 	[luke@luke-server bin]$ ./fill
+
 	Please enter the name of the file you want to create.
+
 	test
+
 	test
+
 	Please enter the size of the file in bytes.
+
 	400000
 
 4. Check the size:
