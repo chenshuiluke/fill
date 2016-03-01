@@ -15,7 +15,8 @@ fill is a C program that generates files of a theoretically unlimited size using
 
 2. `cd bin`
 
-3. Run the program: 
+3. Run the program
+
 	[luke@luke-server bin]$ ./fill
 	Please enter the name of the file you want to create.
 	test
@@ -23,7 +24,8 @@ fill is a C program that generates files of a theoretically unlimited size using
 	Please enter the size of the file in bytes.
 	400000
 
-4. Check the size:
+4. Check the size
+
 	[luke@luke-server bin]$ ls -l
 	total 488
 	-rwxr-xr-x 1 luke users  12228 Feb 29 22:50 fill
