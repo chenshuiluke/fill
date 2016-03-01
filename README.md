@@ -17,21 +17,14 @@ fill is a C program that generates files of a theoretically unlimited size using
 
 3. Run the program: 
 
-
 	[luke@luke-server bin]$ ./fill
-
 	Please enter the name of the file you want to create.
-
 	test
-
 	test
-
 	Please enter the size of the file in bytes.
-
 	400000
 
 4. Check the size:
-
 
 	[luke@luke-server bin]$ ls -l
 	total 488
