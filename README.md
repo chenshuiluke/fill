@@ -1,3 +1,5 @@
+![image](https://raw.githubusercontent.com/chenshuiluke/fill/master/fill.png)
+
 fill is a C program that generates files of a theoretically unlimited size using the GNU MultiPrecision Arithmetic Library
 #Building
 
@@ -15,6 +17,7 @@ fill is a C program that generates files of a theoretically unlimited size using
 
 3. Run the program: 
 
+
 	[luke@luke-server bin]$ ./fill
 	Please enter the name of the file you want to create.
 	test
@@ -23,6 +26,7 @@ fill is a C program that generates files of a theoretically unlimited size using
 	400000
 
 4. Check the size:
+
 
 	[luke@luke-server bin]$ ls -l
 	total 488
